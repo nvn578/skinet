@@ -6,13 +6,23 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public class Products
+    public class Products : BaseEntities
     {
-        [Key]
-        public int Id { get; set; }
-
+       
         public string Name { get; set; }
 
-        
+        public String Description { get; set; }
+
+        public decimal Price { get; set; }
+
+        public string PictureUrl { get; set; }
+
+        public ProductType productType { get; set; }    
+        public int ProductTypeId { get; set; } 
+
+        public ProductBrand productBrand { get; set; }
+        public int ProductBrandId { get; set; }
+
+
     }
 }
