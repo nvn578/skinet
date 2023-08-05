@@ -14,11 +14,13 @@ Products : Product[] = [];
 
   constructor(private http:HttpClient) { }
 
-  getProducts(brandId?:number ,typeId?:number ,search?:string){
+  getProducts(brandId?:number ,typeId?:number ,sort?:string ,search?:string){
     let params = new HttpParams;
     if(brandId) params = params.append('brandId',brandId);
     if(typeId) params = params.append('typeId',typeId);
     if(search) params = params.append('search',search);
+    if(sort) params = params.append('sort',sort);
+
 
     return this.http.get<Pagination<Product[]>>(this.baseUrl +'products',{params});
   }
