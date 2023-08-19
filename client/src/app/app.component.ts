@@ -10,10 +10,10 @@ import { BasketService } from './basket/basket.service';
 export class AppComponent implements OnInit {
   title = 'Ecommerce';
   constructor(private http:HttpClient,private basketService : BasketService){
-
+    
   }
   ngOnInit(): void {
-    const basketId =localStorage.getItem('basket_id');
+    const basketId =localStorage.getItem('basket_Id');
     if(basketId) this.basketService.getBasket(basketId);
   }
 }

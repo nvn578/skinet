@@ -53,7 +53,9 @@ export class ProductDetilsComponent implements OnInit {
     this.quantity++;
   }
   decrementQuantity(){
-    this.quantity--;
+    if(this.quantity > 0){
+      this.quantity--;
+    }
   }
 
   updateBasket(){
